@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import * as signalR from "@microsoft/signalr";
 import type { MovieAggregate, ProviderStreamEvent } from "../types/types";
+import { logger } from "../utils/logger";
 
 export function useSignalR(apiBase: string) {
   const [events, setEvents] = useState<ProviderStreamEvent[]>([]);
@@ -18,7 +19,7 @@ export function useSignalR(apiBase: string) {
     let stopped = false;
 
     connection.onreconnected(() => {
-    console.log("Reconnected to SignalR hub.");
+    logger.info("Reconnected to SignalR hub.");
     setError(null);
   });
 
@@ -37,16 +38,17 @@ export function useSignalR(apiBase: string) {
             setError(null);
           },
           error: (err) => {
-            console.error("SignalR stream error:", err);
+            logger.error("SignalR stream error:", err);
             setError("Having trouble getting data from the sources. Please try again later.");
           },
           complete: () => {
-            if (!stopped) console.log("SignalR stream completed");
+            if (!stopped) 
+              logger.info("SignalR stream completed");
             setError(null);
           },
         });
       } catch (e) {
-        console.error("SignalR connection failed:", e);
+        logger.error("SignalR connection failed:", e);
       }
     })();
 

@@ -39,6 +39,7 @@ A **.NET 8 + React (Vite) application** that compares movie prices from multiple
 ### 1. Clone and restore
 ```bash
 git clone <github-repo-url>
+cd cheapest-movies
 cd webjet-movies-api
 dotnet restore
 ```
@@ -50,9 +51,11 @@ The app expects `WebjetSettings:ApiKey` to be provided via configuration.
 #### Option A: Use environment variable
 
 On **PowerShell**:
+
 ```powershell
 $env:WebjetSettings__ApiKey="<your-api-key-here>"
 ```
+
 #### Option B: Add to appsettings.json
 Open appsettings.json in your editor, and add the key for the ApiKey under WebjetSettings
 

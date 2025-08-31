@@ -1,0 +1,49 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# VS / Rider / tooling
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# .NET build artifacts
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+*.nupkg
+
+# ASP.NET generated
+staticwebassets.build.json
+staticwebassets.pack.sentinel
+
+**/Properties/launchSettings.json
+**/*.csproj.user
+
+# Node / Vite
+node_modules/
+dist/
+coverage/
+vite.svg
+*.tsbuildinfo
+
+# Docker
+**/.dockerignore
+**/docker-compose.override.yml
+**/*.local.yml
+
+# Test output
+TestResults/
+coverage/
+
+# Misc caches
+*.vsidx
+*.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json

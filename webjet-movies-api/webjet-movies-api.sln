@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Webjet.Api", "webjet-movies-api\Webjet.Api.csproj", "{FCB824BD-55CC-4D41-AB8E-BD3AD1273EBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCB824BD-55CC-4D41-AB8E-BD3AD1273EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCB824BD-55CC-4D41-AB8E-BD3AD1273EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCB824BD-55CC-4D41-AB8E-BD3AD1273EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCB824BD-55CC-4D41-AB8E-BD3AD1273EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E038F083-1A75-4EAD-8D1A-97D75C5CCD77}
+	EndGlobalSection
+EndGlobal

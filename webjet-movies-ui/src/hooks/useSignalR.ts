@@ -49,6 +49,7 @@ export function useSignalR(apiBase: string) {
         });
       } catch (e) {
         logger.error("SignalR connection failed:", e);
+        setError("Having trouble getting data from the sources. Please try again later.");
       }
     })();
 

@@ -42,7 +42,7 @@ Navigate to the directory:
 ```bash
 cd cheapest-movies
 cd webjet-movies-api
-
+```
 
 Alternatively, just download the zip from this repo.
 

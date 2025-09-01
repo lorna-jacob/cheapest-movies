@@ -22,8 +22,6 @@ obj/
 # ASP.NET generated
 staticwebassets.build.json
 staticwebassets.pack.sentinel
-
-**/Properties/launchSettings.json
 **/*.csproj.user
 
 # Node / Vite

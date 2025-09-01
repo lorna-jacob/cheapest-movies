@@ -11,25 +11,22 @@ A **.NET 8 + React (Vite) application** that compares movie prices from multiple
 ## ✅ Assumptions & Design Choices
 
 - **Single instance (dev/small deploys):**  
-  The Web API is assumed to run as a **single container/instance** initially. Therefore I used **`IMemoryCache`** for simplicity and speed.
-
-- **Future scale‑out:**  
-  If running multiple replicas (Kubernetes, ECS), switch to a **distributed cache** (e.g., Redis) so cache is shared across instances and consistent for fallback.
+  The Web API is assumed to run as a **single container/instance** initially. Therefore I used **`IMemoryCache`** for simplicity and speed. If running multiple replicas (Kubernetes, ECS), then it will need a **distributed cache** (e.g., Redis) so cache data is shared across instances and consistent for fallback.
 
 - **Secret injection at deploy time:**  
   The CI/CD pipeline is assumed to fetch the API key from a **secure store** (e.g., **AWS Systems Manager Parameter Store** or **AWS Secrets Manager**) and inject it as the environment variable `WebjetSettings__ApiKey` during deployment. The key is **not** stored in images or configs.
 
 - **SignalR for streaming:**  
-  I used **SignalR streaming** (Hub method returning `IAsyncEnumerable<T>`) for robust server→client updates and auto‑reconnect. 
+  I used **SignalR streaming** (Hub method returning `IAsyncEnumerable<T>`) for robust server to client updates and auto‑reconnect. I opted for this instead of a simple REST endpoint so that the UI can progressively render the data as they become available. 
   
 - **Agile delivery:**  
-  The current state is just an MVP (Minimum Viable Product). The assumption is that the app will be enhanced in multiple iterations until deemed ready (i.e, add features to show details about the movie, add search bar, monitoring, alerting, etc).
+  The current state is just an MVP (Minimum Viable Product). My assumption is that the app will be enhanced in multiple iterations until deemed ready (i.e, add more features such as showing details about the movie, allowing for searches, monitoring, alerting, and so on).
 ---
 
 ## 🛠️ Prerequisites
 
 - [.NET 8 SDK](https://dotnet.microsoft.com/download)
-- [Node.js 18+](https://nodejs.org/en/download/) (with `npm`)
+- [Node.js 20.19+](https://nodejs.org/en/download/) (with `npm`)
 - An API key for the [Webjet API Test](https://webjetapitest.azurewebsites.net/)
 
 ---
@@ -39,10 +36,15 @@ A **.NET 8 + React (Vite) application** that compares movie prices from multiple
 ### 1. Clone and restore
 ```bash
 git clone <github-repo-url>
+```
+
+Navigate to the directory:
+```bash
 cd cheapest-movies
 cd webjet-movies-api
-dotnet restore
-```
+
+
+Alternatively, just download the zip from this repo.
 
 ### 2. Configure your API key
 
